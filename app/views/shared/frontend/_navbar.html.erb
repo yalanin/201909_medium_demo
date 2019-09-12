@@ -13,10 +13,8 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
-        首頁
-      </a>
-
+      <%= link_to '首頁', root_path, class: 'navbar-item' %>
+      
       <a class="navbar-item">
         文章
       </a>
@@ -47,10 +45,23 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-            <%= link_to new_member_registration_path, class: 'button is-primary' do %>
-              <strong>註冊</strong>
+            <% if member_signed_in? %>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  <strong><%= current_member.email %></strong>
+                </a>
+                <div class="navbar-dropdown">
+                  <%= link_to '編輯個人資料', edit_member_registration_path, class: 'navbar-item' %>
+                  <hr class="navbar-divider">
+                  <%= link_to '登出', destroy_member_session_path, method: :delete, class: 'navbar-item', data: { confirm: '是否確定登出？' } %>
+                </div>
+              </div>
+            <% else %>
+              <%= link_to new_member_registration_path, class: 'button is-primary' do %>
+                <strong>註冊</strong>
+              <% end %>
+              <%= link_to '登入', new_member_session_path, class: 'button is-light' %>
             <% end %>
-            <%= link_to '登入', new_member_session_path, class: 'button is-light' %>
         </div>
       </div>
     </div>
