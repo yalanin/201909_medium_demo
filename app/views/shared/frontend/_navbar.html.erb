@@ -46,7 +46,7 @@
             <% if member_signed_in? %>
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                  <strong><%= current_member.email %></strong>
+                  <strong><%= current_member.try(:nickname) || current_member.email %></strong>
                 </a>
                 <div class="navbar-dropdown">
                   <%= link_to '編輯個人資料', edit_member_registration_path, class: 'navbar-item' %>

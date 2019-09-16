@@ -6,6 +6,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :nickname, '請輸入暱稱' %><br />
+    <div class="control" style='width: 20%'>
+      <%= f.text_field :nickname, class: 'input', placeholder: '請輸入暱稱' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= f.label :email, '請輸入信箱' %><br />
     <div class="control" style='width: 20%'>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: '請輸入信箱' %>

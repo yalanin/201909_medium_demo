@@ -6,6 +6,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :nickname, '暱稱' %><br />
+    <div class="control" style='width: 20%'>
+      <%= f.email_field :nickname, value: current_member.try(:nickname), autofocus: true, class: 'input', placeholder: '請輸入暱稱' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= f.label :email, '信箱' %><br />
     <div class="control" style='width: 20%'>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: '請輸入註冊信箱' %>
@@ -22,9 +29,9 @@
       <%= f.password_field :password, autocomplete: "new-password", class: 'input', placeholder: '請輸入新密碼' %>
     </div>  
     <% if @minimum_password_length %>
-      <p class='content is-small'>密碼最少 <%= @minimum_password_length %> 個字，若不想更改，請保持空白</p>
+      <p class='content is-small' style="color:#0066FF">密碼最少 <%= @minimum_password_length %> 個字，若不想更改，請保持空白</p>
     <% else %>
-      <p class='content is-small'>若不想更改，請保持空白</p>
+      <p class='content is-small' style="color:#0066FF">若不想更改，請保持空白</p>
     <% end %>
   </div>
 
@@ -40,7 +47,7 @@
     <div class="control" style='width: 20%'>
       <%= f.password_field :current_password, autocomplete: "current-password", class: 'input', placeholder: '請輸入原來的密碼' %>
     </div>
-    <p class='content is-small'>為保障使用者權益，修改資料需確認密碼</p>
+    <p class='content is-small' style="color:#0066FF">為保障使用者權益，修改資料需確認密碼</p>
   </div>
 
   <div class="field is-grouped">
