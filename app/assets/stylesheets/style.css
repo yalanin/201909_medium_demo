@@ -1,3 +1,9 @@
+/* 頁首抬頭 */
+.member-title {
+  text-align: center;
+}
+
+/*表單填寫設定*/
 .form-center {
   width: 350px;
   margin: 0 auto;
@@ -23,8 +29,9 @@
   margin-right: 10px;
 }
 
+/* 錯誤訊息 */
 .error-message {
-  width:350px;
+  width: 350px;
   margin: 0 auto;
   text-align: left;
 }
@@ -33,6 +40,6 @@
   color: red;
 }
 
-.member-title {
-  text-align: center;
+.field_with_errors .input{
+  border: 1px red solid;
 }
