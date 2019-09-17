@@ -3,28 +3,35 @@
   text-align: center;
 }
 
-/*表單填寫設定*/
+/*會員表單填寫設定*/
 .form-center {
   width: 350px;
   margin: 0 auto;
 }
 
+/* 文章表單 */
+.story-form {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* 按鈕 */
 .button-center {
   width: 250px; 
   margin: 0 auto;
 }
-
+.button-right {
+  float: right;
+}
 /* 給字少的按鈕用 */
 .less-button-center {
   width: 130px; 
   margin: 0 auto;
 }
-
 .one-button-center {
   width: 50px; 
   margin: 0 auto;
 }
-
 .button-right-space {
   margin-right: 10px;
 }
@@ -35,11 +42,9 @@
   margin: 0 auto;
   text-align: left;
 }
-
 .field_with_errors{
   color: red;
 }
-
 .field_with_errors .input{
   border: 1px red solid;
 }
