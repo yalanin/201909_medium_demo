@@ -44,7 +44,7 @@
       <div class="navbar-item">
         <div class="buttons">
             <% if member_signed_in? %>
-              <div class="navbar-item has-dropdown is-hoverable">
+              <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 30px">
                 <a class="navbar-link">
                   <strong><%= current_member.try(:nickname) || current_member.email %></strong>
                 </a>

@@ -1,0 +1,38 @@
+.form-center {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.button-center {
+  width: 250px; 
+  margin: 0 auto;
+}
+
+/* 給字少的按鈕用 */
+.less-button-center {
+  width: 130px; 
+  margin: 0 auto;
+}
+
+.one-button-center {
+  width: 50px; 
+  margin: 0 auto;
+}
+
+.button-right-space {
+  margin-right: 10px;
+}
+
+.error-message {
+  width:350px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.field_with_errors{
+  color: red;
+}
+
+.member-title {
+  text-align: center;
+}

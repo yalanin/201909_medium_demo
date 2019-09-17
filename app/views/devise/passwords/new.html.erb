@@ -1,27 +1,26 @@
 <br />
 
-<h2 class="title is-3">忘記密碼</h2>
+<h2 class="title is-3 member-title">忘記密碼</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class='error-message'>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
 
-  <div class="field">
-    <%= f.label :email, '請輸入註冊信箱' %><br />
-    <div class="control" style='width: 20%'>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: '請輸入註冊信箱'%>
+  <br />
+
+  <div class='form-center'>
+    <div class="field">
+      <%= f.label :email, '請輸入註冊信箱' %>
+      <div class="control">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: '請輸入註冊信箱'%>
+      </div>
+    </div>
+
+    <div class="actions field is-grouped">
+      <%= f.submit "寄送認證信", class: 'button is-primary button-right-space' %>
+<% end %>
+      <%= link_to '註冊', new_member_registration_path, class: 'button is-info button-right-space' %>
+      <%= link_to '登入', new_member_session_path, class: 'button is-light' %>
     </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "寄送認證信", class: 'button is-primary' %>
-  </div>
-<% end %>
-
-<br />
-
-<div class="field is-grouped">
-  <div class="control">
-    <%= link_to '註冊', new_member_registration_path, class: 'button is-info' %>
-    <%= link_to '登入', new_member_session_path, class: 'button is-light' %>
-  </div>
-</div>
