@@ -9,9 +9,9 @@
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
-    <div id='mobile-show-box' class="navbar-item navbar-dropdown">
+    <div id='mobile-show-box' class="navbar-item navbar-dropdown mobile-show">
       <a class="is-link"></a>
-      <div id='mobile-item' class="navbar-dropdown mobile-hidden">
+      <div class="navbar-dropdown">
       <% if member_signed_in? %>        
         <%= link_to '新增文章', new_story_path, class: 'navbar-item' %>
         <%= link_to '文章列表', stories_path, class: 'navbar-item' %>
@@ -92,8 +92,9 @@
 <script>
 $(document).ready(function() {
   $('.navbar-burger').on("click", function() {
-    $('#mobile-item').removeClass('mobile-hidden');
-    $('#mobile-show-box').addClass('mobile-show');
+    //$('#mobile-item').removeClass('mobile-hidden');
+    //$('#mobile-show-box').addClass('mobile-show');
+    $('.mobile-show-box').slideToggle();
   })
 });
 </script>

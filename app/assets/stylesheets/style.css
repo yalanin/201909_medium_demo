@@ -74,9 +74,9 @@
 }
 
 /* 手機選單顯示 */
-.mobile-hidden {
+/* .mobile-hidden {
   display: none;
-}
+} */
 .mobile-show {
   float: right;
   z-index: 1;
