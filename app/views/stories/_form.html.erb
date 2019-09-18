@@ -1,0 +1,15 @@
+<%= form_for(story) do |f| %>
+  <div class="field">
+    <%= f.label :title, '文章標題' %>
+    <%= f.text_field :title, class: 'input' %>
+  </div>
+  <div class="field">
+    <%= f.label :content, '文章內容' %>
+    <%= f.text_area :content, rows: 10, class: 'textarea' %>
+  </div>
+  <br />
+  <div class="field button-right">
+    <%= link_to '儲存草稿', root_path, class: 'button is-light' %>
+    <%= f.submit '發布文章', class: 'button is-primary' %>  
+  </div>
+<% end %>

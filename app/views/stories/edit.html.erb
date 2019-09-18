@@ -1,5 +1,5 @@
 <br />
-<h2 class="title is-3">新增文章</h2>
+<h2 class="title is-3">編輯文章</h2>
 
 <% if @story.errors.any? %>
   <ul>
@@ -8,7 +8,5 @@
     <% end %>
   </ul>
 <% end %>
-
-<br />
 
 <%= render 'form', story: @story %>
