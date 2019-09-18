@@ -1,11 +1,8 @@
 <br />
+
 <h2 class="title is-3">文章列表</h2>
 
 <%= link_to '新增文章', new_story_path, class: 'button is-primary is-outlined button-right' %>
-
-<%= notice %>
-<br />
-<br />
 
 <% @stories.each do |story| %>
   <div class='content'>

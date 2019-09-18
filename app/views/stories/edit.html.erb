@@ -1,12 +1,5 @@
 <br />
-<h2 class="title is-3">編輯文章</h2>
 
-<% if @story.errors.any? %>
-  <ul>
-    <% @story.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<h2 class="title is-3">編輯文章</h2>
 
 <%= render 'form', story: @story %>

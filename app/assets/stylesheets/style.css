@@ -5,7 +5,7 @@
 
 /*會員表單填寫設定*/
 .form-center {
-  width: 350px;
+  width: 400px;
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
 
 /* 錯誤訊息 */
 .error-message {
-  width: 350px;
+  width: 400px;
   margin: 0 auto;
   text-align: left;
 }
@@ -47,4 +47,24 @@
 }
 .field_with_errors .input{
   border: 1px red solid;
+}
+.message-bar {
+  background-color: #D4FFD4;
+  border-radius: 4px;
+  padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  position: relative;
+}
+.message-bar-alert-long {
+  background-color: #FFBFBF;
+  border-radius: 4px;
+  padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+.message-bar-alert {
+  background-color: #FFBFBF;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 0.3rem;
+  position: relative;
 }

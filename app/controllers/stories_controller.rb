@@ -26,13 +26,15 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
-      redirect_to stories_path, notice: '文章已儲存'
+      redirect_to stories_path, notice: '文章已編輯'
     else
       render :edit
     end
   end
 
   def destroy
+    @story.destroy
+    redirect_to stories_path, notice: '文章已刪除'
   end
 
   private
