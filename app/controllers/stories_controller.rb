@@ -8,9 +8,14 @@ class StoriesController < ApplicationController
 
   def create
     @story = current_member.stories.new(story_params)
+    @story.status = 'published' if params[:publish]
 
     if @story.save
-      redirect_to stories_path, notice: '文章已儲存'
+      if params[:publish]
+        redirect_to stories_path, notice: '文章已發佈'
+      else
+        redirect_to edit_story_path(@story), notice: '草稿已儲存'
+      end
     else
       @error_message = @story.errors.full_messages
       render :new
@@ -26,7 +31,7 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
-      redirect_to stories_path, notice: '文章已編輯'
+      redirect_to stories_path, notice: '文章修改已儲存'
     else
       render :edit
     end

@@ -18,6 +18,12 @@
   width: 960px;
   margin: 0 auto;
 }
+.story-list-title {
+  display:flex; 
+  justify-content: space-between; 
+  padding-bottom: 2.5rem;
+  padding-right: 5rem;
+}
 
 /* 按鈕 */
 .button-center {
