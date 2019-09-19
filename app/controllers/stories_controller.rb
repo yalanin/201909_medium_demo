@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   before_action :authenticate_member!
-  before_action :find_story, only: [:edit, :update, :destroy]
+  before_action :find_story, only: [:edit, :update, :destroy, :show]
 
   def new
     @story = current_member.stories.new
@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = current_member.stories.new(story_params)
-    @story.status = 'published' if params[:publish]
+    @story.publish! if params[:publish]
 
     if @story.save
       if params[:publish]
@@ -26,11 +26,21 @@ class StoriesController < ApplicationController
     @stories = current_member.stories.order(created_at: :desc)
   end
 
+  def show
+  end
+
   def edit
+    @story.unpublish! if @story.published?
   end
 
   def update
     if @story.update(story_params)
+      case
+      when params[:publish]
+        @story.publish! 
+      when params[:unpublish]
+        @story.unpublish!
+      end
       redirect_to stories_path, notice: '文章修改已儲存'
     else
       render :edit

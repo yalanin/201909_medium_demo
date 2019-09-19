@@ -7,9 +7,11 @@
 
 <% @stories.each do |story| %>
   <div class='content'>
-    <h3 class="title is-4"><%= story.title %></h3>
+    <%= link_to story.title, story_path(story), class: 'title is-4' %>
     <p><%= story.content.split(/[\r\n]+/)[0] %></p>
-    <p>最後編輯時間：<%= time_ago_in_words(story.updated_at) %>
+    <p>
+      最後編輯時間：<%= time_ago_in_words(story.updated_at) %>
+      <%= story.status %>
       <%= link_to '編輯', edit_story_path(story), class: 'button is-text is-small' %>
       <%= link_to '刪除', story_path(story), method: :delete, class: 'button is-text is-small', data: { confirm: '確定刪除？' } %>
     </p>

@@ -19,7 +19,12 @@
   </div>
   <br />
   <div class="field button-right">
-    <%= f.submit '儲存草稿', name: 'save_as_draft', class: 'button is-light' %>
-    <%= f.submit '發布文章', name: 'publish', class: 'button is-primary' %>  
+    <% if story.may_unpublish? %>
+      <%= f.submit '文章下架', name: 'unpublish', class: 'button is-warning' %>
+      <%= f.submit '儲存修改', name: 'publish', class: 'button is-primary' %>
+    <% else %>
+      <%= f.submit '儲存草稿', name: 'save_as_draft', class: 'button is-light' %>
+      <%= f.submit '發布文章', name: 'publish', class: 'button is-primary' %>
+    <% end %>   
   </div>
 <% end %>
