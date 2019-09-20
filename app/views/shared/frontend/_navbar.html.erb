@@ -9,7 +9,7 @@
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
-    <div id='mobile-show-box' class="navbar-item navbar-dropdown mobile-show">
+    <div id='mobile-show-box' class="navbar-item navbar-dropdown mobile-show" style=" display: none;">
       <a class="is-link"></a>
       <div class="navbar-dropdown">
       <% if member_signed_in? %>        
@@ -91,10 +91,12 @@
 
 <script>
 $(document).ready(function() {
+  //$('#mobile-show-box').slideToggle();
   $('.navbar-burger').on("click", function() {
+    console.log('hi');
     //$('#mobile-item').removeClass('mobile-hidden');
     //$('#mobile-show-box').addClass('mobile-show');
-    $('.mobile-show-box').slideToggle();
+    $('#mobile-show-box').slideToggle();
   })
 });
 </script>

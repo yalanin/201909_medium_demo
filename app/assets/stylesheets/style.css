@@ -2,8 +2,8 @@
   clear:both;
 }
 
-.link-active {
-  color: green !important;
+.link-unchoose {
+  color: gray !important;
 }
 
 /* 頁首抬頭 */
@@ -88,6 +88,8 @@
   display: none;
 } */
 .mobile-show {
-  float: right;
-  z-index: 1;
+  background-color: white;
+  float: right !important;
+  position: absolute !important;
+  right: 0;
 }

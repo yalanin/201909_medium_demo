@@ -6,11 +6,11 @@
 </div>
 
 <% if params[:status] && params[:status] == 'published' %>
-    <%= link_to "草稿(#{@draft_count})", stories_path(status: 'draft'), class: 'tag is-medium is-white', style: 'text-decoration: none;' %>
-    <%= link_to "已發布(#{@published_count})", stories_path(status: 'published'),class: 'tag is-medium is-white link-active', style: 'text-decoration: none;' %>
-<% else %>
-    <%= link_to "草稿(#{@draft_count})", stories_path(status: 'draft'), class: 'tag is-medium is-white link-active', style: 'text-decoration: none;' %>
+    <%= link_to "草稿(#{@draft_count})", stories_path(status: 'draft'), class: 'tag is-medium is-white link-unchoose', style: 'text-decoration: none;' %>
     <%= link_to "已發布(#{@published_count})", stories_path(status: 'published'),class: 'tag is-medium is-white', style: 'text-decoration: none;' %>
+<% else %>
+    <%= link_to "草稿(#{@draft_count})", stories_path(status: 'draft'), class: 'tag is-medium is-white', style: 'text-decoration: none;' %>
+    <%= link_to "已發布(#{@published_count})", stories_path(status: 'published'),class: 'tag is-medium is-white link-unchoose', style: 'text-decoration: none;' %>
 <% end %>
 <hr>
 
