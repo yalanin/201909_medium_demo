@@ -23,22 +23,29 @@ class StoriesController < ApplicationController
   end
 
   def index
+    @draft_count = current_member.stories.is_draft.size
+    @published_count = current_member.stories.is_published.size
     @stories = current_member.stories.order(created_at: :desc)
+    if params[:status]
+      @stories = @stories.is_published if params[:status] == 'published'
+      @stories = @stories.is_draft if params[:status] == 'draft'
+    else
+      @stories = @stories.is_draft
+    end    
   end
 
   def show
   end
 
   def edit
-    @story.unpublish! if @story.published?
   end
 
   def update
     if @story.update(story_params)
       case
-      when params[:publish]
+      when params[:publish] && @story.draft?
         @story.publish! 
-      when params[:unpublish]
+      when params[:unpublish] && @story.published?
         @story.unpublish!
       end
       redirect_to stories_path, notice: '文章修改已儲存'

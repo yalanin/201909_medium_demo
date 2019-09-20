@@ -2,6 +2,10 @@
   clear:both;
 }
 
+.link-active {
+  color: green !important;
+}
+
 /* 頁首抬頭 */
 .member-title {
   text-align: center;

@@ -1,6 +1,8 @@
 class Story < ApplicationRecord  
   include AASM
   default_scope { where(deleted_at: nil) }
+  scope :is_draft, -> { where(status: 'draft') }
+  scope :is_published, -> { where(status: 'published') }
 
   belongs_to :member
   validates :title, presence: true

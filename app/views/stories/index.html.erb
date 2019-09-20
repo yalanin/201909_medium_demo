@@ -5,16 +5,13 @@
   <%= link_to '新增文章', new_story_path, class: 'button is-primary is-outlined' %>
 </div>
 
-<% @stories.each do |story| %>
-  <div class='content'>
-    <%= link_to story.title, story_path(story), class: 'title is-4' %>
-    <p><%= story.content.split(/[\r\n]+/)[0] %></p>
-    <p>
-      最後編輯時間：<%= time_ago_in_words(story.updated_at) %>
-      <%= story.status %>
-      <%= link_to '編輯', edit_story_path(story), class: 'button is-text is-small' %>
-      <%= link_to '刪除', story_path(story), method: :delete, class: 'button is-text is-small', data: { confirm: '確定刪除？' } %>
-    </p>
-  </div>
-  <hr>
+<% if params[:status] && params[:status] == 'published' %>
+    <%= link_to "草稿(#{@draft_count})", stories_path(status: 'draft'), class: 'tag is-medium is-white', style: 'text-decoration: none;' %>
+    <%= link_to "已發布(#{@published_count})", stories_path(status: 'published'),class: 'tag is-medium is-white link-active', style: 'text-decoration: none;' %>
+<% else %>
+    <%= link_to "草稿(#{@draft_count})", stories_path(status: 'draft'), class: 'tag is-medium is-white link-active', style: 'text-decoration: none;' %>
+    <%= link_to "已發布(#{@published_count})", stories_path(status: 'published'),class: 'tag is-medium is-white', style: 'text-decoration: none;' %>
 <% end %>
+<hr>
+
+<%= render 'story_list', stories: @stories %>
