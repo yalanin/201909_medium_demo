@@ -15,3 +15,13 @@
 <hr>
 
 <%= render 'story_list', stories: @stories %>
+
+<script>
+$(document).ready(function() {
+  $(".fa-chevron-down").on("click", function() {
+    var id = $(this).attr('id');
+    console.log(id)
+    $('.story-action-' + id).slideToggle();
+  })
+})
+</script>

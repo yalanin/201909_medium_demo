@@ -4,9 +4,13 @@
     <p><%= story.content.split(/[\r\n]+/)[0] %></p>
     <p>
       最後編輯時間：<%= time_ago_in_words(story.updated_at) %>
-      <%= story.status %>
-      <%= link_to '編輯', edit_story_path(story), class: 'button is-text is-small' %>
-      <%= link_to '刪除', story_path(story), method: :delete, class: 'button is-text is-small', data: { confirm: '確定刪除？' } %>
+      <span class= "action" style="color: gray;">
+        <%= fa_icon "chevron-down", id: "#{story.id}" %>
+        <div class="story-action-<%= "#{story.id}" %>" style="display:none;">
+          <%= link_to '編輯', edit_story_path(story), class: 'button is-text is-small' %>
+          <%= link_to '刪除', story_path(story), method: :delete, class: 'button is-text is-small', data: { confirm: '確定刪除？' } %>
+        </div>
+      </span>
     </p>
   </div>
   <hr>

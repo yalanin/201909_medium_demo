@@ -12,6 +12,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
+gem "font-awesome-rails"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'

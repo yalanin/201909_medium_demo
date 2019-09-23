@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>向 Medium 致敬</title>
+    <title>Medium_demo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <%= render 'shared/frontend/navbar' %>
     <div class='container'>
+      <%= render 'shared/frontend/navbar' %>
       <%= render 'shared/frontend/flash' if notice %>
       <%= yield %>
     </div>
