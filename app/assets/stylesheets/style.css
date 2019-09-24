@@ -28,6 +28,11 @@
   padding-bottom: 2.5rem;
   padding-right: 5rem;
 }
+.story-action-botton{
+  width:70px !important; 
+  margin-left: 8.5rem; 
+  text-align: center; 
+}
 
 /* 按鈕 */
 .button-center {
@@ -84,9 +89,6 @@
 }
 
 /* 手機選單顯示 */
-/* .mobile-hidden {
-  display: none;
-} */
 .mobile-show {
   background-color: white;
   float: right !important;
