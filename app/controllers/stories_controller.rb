@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_member!
-  before_action :find_story, only: [:edit, :update, :destroy, :show]
+  before_action :authenticate_member!, except: :show
+  before_action :find_story, only: [:edit, :update, :destroy]
 
   def new
     @story = current_member.stories.new
@@ -35,6 +35,7 @@ class StoriesController < ApplicationController
   end
 
   def show
+    @story = Story.find(params[:id])
   end
 
   def edit
