@@ -23,7 +23,7 @@
   <br />
   <div class="story-action box button-right" style="display:none;">
     <div class="content">
-    <% if current_member == @story.member %>
+    <% if @is_author %>
       <p class="is-size-7 link-unchoose">隱藏留言</p>
       <p class="is-size-7 link-unchoose">文章回報</p>
       <p class="is-size-7 link-unchoose">封鎖該作者</p>

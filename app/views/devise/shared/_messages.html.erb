@@ -1,0 +1,9 @@
+<% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%= key %>">
+    <ul>
+      <li class='message-bar-alert'>
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>

@@ -2,6 +2,12 @@
 
 <br />
 
+<div class='error-message'> 
+  <%= render 'devise/shared/messages' %>
+</div>
+
+<br />
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class='form-center'>
     <div class="field">
