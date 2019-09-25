@@ -1,2 +1,27 @@
-<%= @story.title %><br />
-<p style="padding:10px 0"><%= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
+<div class="story-content">
+  <div style= "margin-bottom: 70px;">
+    <h2 class="title is-3"><%= @story.title %></h2>
+    <p class="is-size-6"><%= current_member.try(:nickname) || current_member.email.split('@')[0] %><br /></p>
+    <p class="is-size-7 link-unchoose">
+      <% if @story.created_at.year == Time.now.year %>
+        <%= @story.created_at.strftime('%b %-d') %>
+      <% else %>
+        <%= @story.created_at.strftime('%b %-d,%Y') %>
+      <% end %>
+    </p>
+    <br />
+    <p class="is-size-5"><%= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
+  </div>
+  <%= fa_icon "sign-language 2x" %>
+  <%= fa_icon "ellipsis-h 2x", style: 'float:right;' %>
+  <%= fa_icon "bookmark 2x", style: 'float:right; margin-right: 1rem;' %>
+  <%= fa_icon "facebook-square 2x", style: 'float:right; margin-right: 1rem;' %>
+  <%= fa_icon "twitter 2x", style: 'float:right; margin-right: 1rem;' %>
+  <div class="story-hr">  
+    <p class="is-size-6">作者</p>
+    <p class="is-size-3"><%= current_member.try(:nickname) || current_member.email.split('@')[0] %></p>
+  </div>
+  <a class="button is-primary is-outlined is-fullwidth" style="height: 60px;">留個言吧</a>
+</div>
+<br />
+<br />

@@ -34,6 +34,23 @@
   text-align: center; 
 }
 
+/* 文章 show 頁面 */
+.story-content {
+  width: 60%; 
+  margin: 0 auto;
+}
+.story-hr {
+  border-top:0.3px #D4D4D4 solid; 
+  border-bottom:0.3px #D4D4D4 solid; 
+  margin: 2rem 0; 
+  padding: 2rem 0;
+}
+.more-story-hr { 
+  border-bottom:0.3px #D4D4D4 solid; 
+  margin: 2rem 0; 
+  padding: 1rem 0;
+}
+
 /* 按鈕 */
 .button-center {
   width: 250px; 
