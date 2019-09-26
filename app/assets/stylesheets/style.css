@@ -1,9 +1,6 @@
-.clearfix {
-  clear:both;
-}
-
-.link-unchoose {
-  color: gray !important;
+.boby-contain{
+  width:70% !important;
+  margin: 0 auto;
 }
 
 /* 頁首抬頭 */
@@ -25,7 +22,7 @@
 .story-list-title {
   display:flex; 
   justify-content: space-between; 
-  padding-bottom: 2.5rem;
+  padding-bottom: 1rem;
   padding-right: 5rem;
 }
 .story-action-botton{
@@ -36,7 +33,7 @@
 
 /* 文章 show 頁面 */
 .story-container {
-  width: 60%; 
+  width: 75%; 
   margin: 0 auto;
 }
 .story-content {
@@ -52,13 +49,46 @@
   border-bottom:0.3px #D4D4D4 solid; 
   padding: 1rem 0;
 }
+.dividing-line {
+  border: 0; 
+  height: 1px; 
+  background: #BABABA;
+}
 .more-story-back {
   background-color:#F5F5F5;
 }
 .more-story-head {
-  width: 1190px; 
+  width: 980px; 
   margin: 0 auto; 
   padding-top: 1.5rem;
+}
+.more-story-footer{
+  background-color:#212121;
+}
+.more-story-box{
+  width: 320px; 
+  padding-top: 1.5rem; 
+  margin-right:10px;
+  margin-top: 1.5rem; 
+  background-color:blue; 
+  float:left;
+}
+.more-story-box1{
+  width: 320px; 
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  background-color:blue; 
+  float:left;
+}
+.more-story-box2{
+  width: 700px; 
+  margin: 0 auto; 
+  float: left;
+}
+.more-story-box3{
+  width:160px; 
+  margin: 0 auto; 
+  float:right;
 }
 
 /* 按鈕 */
@@ -68,6 +98,13 @@
 }
 .button-right {
   float: right;
+}
+.button-left {
+  float:left;
+}
+.button-left1 {
+  float:left; 
+  padding-right: 1rem;
 }
 /* 給字少的按鈕用 */
 .less-button-center {
