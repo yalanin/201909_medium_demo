@@ -2,18 +2,17 @@
   <div class='content'>
     <%= link_to story.title, story_path(story), class: 'title is-4' %>
     <p class="is-size-5"><%= story.content.split(/[\r\n]+/)[0] %></p>
-    <p>
-      最後編輯時間：<%= time_ago_in_words(story.updated_at) %>
-      <span class= "action has-text-grey">
-        <%= fa_icon "chevron-down", id: "#{story.id}" %>
-        <div class="story-action-<%= "#{story.id}" %> box story-action-botton" style="display: none;">
-          <div class="content">
-            <%= link_to '編輯', edit_story_path(story), class: 'is-size-7 has-text-grey' %><br />
-            <%= link_to '刪除', story_path(story), method: :delete, class: 'is-size-7 has-text-grey', data: { confirm: '確定刪除？' } %>
-          </div>
-        </div>  
-      </span>
-    </p>
+    <div class="button-left">
+      <p>最後編輯時間：<%= time_ago_in_words(story.updated_at) %></p>
+    </div>
+    <span class= "action has-text-grey button-left" style="margin-left: 0.4rem;">
+      <%= fa_icon "angle-double-right", id: "#{story.id}" %>
+    </span>
+    <div class="story-action-<%= "#{story.id}" %> story-action-botton box button-left" style="display: none;">
+      <%= link_to '編輯', edit_story_path(story), class: 'is-size-7 has-text-grey' %>
+      <%= link_to '刪除', story_path(story), method: :delete, class: 'is-size-7 has-text-grey', data: { confirm: '確定刪除？' } %>
+    </div>   
   </div>
+  <div class="is-clearfix"></div>
   <hr>
 <% end %>

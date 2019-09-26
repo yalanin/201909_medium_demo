@@ -18,9 +18,9 @@
 
 <script>
 $(document).ready(function() {
-  $(".fa-chevron-down").on("click", function() {
+  $(".fa-angle-double-right").on("click", function() {
     var id = $(this).attr('id');
-    $('.story-action-' + id).slideToggle();
+    $('.story-action-' + id).toggle();
   })
 })
 </script>

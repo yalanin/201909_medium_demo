@@ -20,15 +20,15 @@
   margin: 0 auto;
 }
 .story-list-title {
-  display:flex; 
+  display:flex;
   justify-content: space-between; 
   padding-bottom: 1rem;
   padding-right: 5rem;
 }
 .story-action-botton{
-  width:70px !important; 
-  margin-left: 8.5rem; 
-  text-align: center; 
+  width:70px !important;
+  margin-left: 0.5rem;
+  text-align: center;
 }
 
 /* 文章 show 頁面 */
