@@ -35,7 +35,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
+    @story = Story.friendly.find(params[:id])
     @is_author = if current_member == @story.member
                   true
                  else
@@ -71,6 +71,6 @@ class StoriesController < ApplicationController
   end
 
   def find_story
-    @story = current_member.stories.find(params[:id])
+    @story = current_member.stories.friendly.find(params[:id])
   end
 end

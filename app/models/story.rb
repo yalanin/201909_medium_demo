@@ -1,5 +1,8 @@
 class Story < ApplicationRecord  
   include AASM
+  extend FriendlyId
+  friendly_id :slug_candidate, use: :slugged
+
   default_scope { where(deleted_at: nil) }
   scope :is_draft, -> { where(status: 'draft') }
   scope :is_published, -> { where(status: 'published') }
@@ -22,5 +25,18 @@ class Story < ApplicationRecord
 
   def destroy
     update(deleted_at: Time.now)
+  end
+
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize(transliterations: :russian).to_s
+  end
+
+  private
+
+  def slug_candidate
+    [
+      :title,
+      [:title, SecureRandom.hex.first(6)]
+    ]
   end
 end

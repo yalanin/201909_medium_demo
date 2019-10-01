@@ -17,6 +17,8 @@ gem "font-awesome-rails"
 gem 'webpacker', '~> 4.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'aasm', '~> 5.0', '>= 5.0.6'
+gem 'friendly_id', '~> 5.3'
+gem 'babosa', '~> 1.0', '>= 1.0.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
