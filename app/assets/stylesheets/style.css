@@ -10,7 +10,11 @@
 
 /*會員表單填寫設定*/
 .form-center {
-  width: 400px;
+  width: 40%;
+  margin: 0 auto;
+}
+.form-center-edit {
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -93,7 +97,7 @@
 
 /* 按鈕 */
 .button-center {
-  width: 250px; 
+  width: 40%; 
   margin: 0 auto;
 }
 .button-right {
@@ -121,7 +125,12 @@
 
 /* 錯誤訊息 */
 .error-message {
-  width: 400px;
+  width: 40%;
+  margin: 0 auto;
+  text-align: left;
+}
+.error-message-edit {
+  width: 60%;
   margin: 0 auto;
   text-align: left;
 }

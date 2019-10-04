@@ -3,17 +3,17 @@
 <h2 class="title is-3 member-title">編輯會員資料</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <div class='error-message'> 
+  <div class='error-message-edit'> 
     <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 
   <br />
 
-  <div class='form-center'>
+  <div class='form-center-edit'>
     <div class="field">
       <%= f.label :nickname, '暱稱' %>
       <div class="control">
-        <%= f.email_field :nickname, value: current_member.try(:nickname), autofocus: true, class: 'input', placeholder: '請輸入暱稱' %>
+        <%= f.text_field :nickname, value: current_member.try(:nickname), autofocus: true, class: 'input', placeholder: '請輸入暱稱' %>
       </div>
     </div>
 
@@ -27,6 +27,13 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
+
+    <div class="field">
+      <%= f.label :intro, '個人簡介' %>
+      <div class="control">
+        <%= f.text_area :intro, class: 'textarea', rows: 8 %>
+      </div>
+    </div>
 
     <div class="field">
       <%= f.label :password, '密碼更新' %>
