@@ -10,6 +10,11 @@
   <br />
 
   <div class='form-center-edit'>
+    <%= avatar(current_member) %>
+    <div class="field" style="margin-top:1rem; margin-bottom:2rem">
+      <%= f.file_field :avatar, label: false, style:"display:block; margin:auto; padding-left: 6rem" %>
+    </div>
+
     <div class="field">
       <%= f.label :nickname, '暱稱' %>
       <div class="control">

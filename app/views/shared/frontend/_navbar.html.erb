@@ -34,9 +34,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-            <% if member_signed_in? %>
-              <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 30px">
+            <% if member_signed_in? %>             
+              <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 30px">               
                 <a class="navbar-link">
+                  <%= nav_avatar(current_member) %>
                   <strong><%= current_member.try(:nickname) || current_member.email %></strong>
                 </a>
                 <div class="navbar-dropdown">                 

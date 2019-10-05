@@ -8,6 +8,15 @@
   text-align: center;
 }
 
+/*navbar圖示*/
+.nav-round-image {
+  width:28px;
+  height:28px; 
+  border-radius:50%;
+  background-color:gray;
+  margin-right: 0.3rem;
+}
+
 /*會員表單填寫設定*/
 .form-center {
   width: 40%;
@@ -16,6 +25,15 @@
 .form-center-edit {
   width: 60%;
   margin: 0 auto;
+}
+/*圓形圖像*/
+.round-image {
+  width:180px;
+  height:180px; 
+  border-radius:999em;
+  background-color:gray;
+  display:block; 
+  margin:auto;
 }
 
 /* 文章表單 */

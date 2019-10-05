@@ -6,4 +6,5 @@ class Member < ApplicationRecord
   validates :nickname, presence: true
 
   has_many :stories
+  has_one_attached :avatar
 end
