@@ -35,12 +35,6 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.friendly.find(params[:id])
-    @is_author = if current_member == @story.member
-                  true
-                 else
-                  false
-                 end
   end
 
   def edit

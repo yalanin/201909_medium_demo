@@ -186,3 +186,8 @@
   position: absolute !important;
   right: 0;
 }
+
+/* 首頁圖片與標題的空隙 */
+.image-bottom {
+  margin-bottom:1rem;
+}

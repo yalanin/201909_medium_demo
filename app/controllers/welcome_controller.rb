@@ -4,6 +4,12 @@ class WelcomeController < ApplicationController
   end
 
   def show
+    @story = Story.friendly.find(params[:story_id])
+    @is_author = if current_member == @story.member
+                  true
+                else
+                  false
+                end
   end
 
   def member

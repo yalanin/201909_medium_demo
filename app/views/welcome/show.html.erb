@@ -1,0 +1,54 @@
+<br />
+<div class="story-container">
+  <div class="story-content">
+    <h2 class="title is-3"><%= @story.title %></h2>
+    <p class="is-size-6"><%= @story.member_name %><br /></p>
+    <p class="is-size-7 has-text-grey">
+      <% if @story.created_at.year == Time.now.year %>
+        <%= @story.created_at.strftime('%b %-d') %>
+      <% else %>
+        <%= @story.created_at.strftime('%b %-d,%Y') %>
+      <% end %>
+    </p>
+    <br />
+    <p class="is-size-5"><%= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
+  </div>
+  <%= fa_icon "sign-language 2x" %>
+  <div class="button-right">
+    <%= fa_icon "twitter 2x", class: "button-right-space" %>
+    <%= fa_icon "facebook-square 2x", class: "button-right-space" %>
+    <%= fa_icon "bookmark 2x", class: "button-right-space" %>
+    <%= fa_icon "ellipsis-h 2x" %>  
+  </div>
+  <div class="is-clearfix"></div>
+  <br />
+  <div class="story-action box button-right" style="display:none;">
+    <div class="content">
+    <% if @is_author %>
+      <p class="is-size-7 has-text-grey">隱藏留言</p>
+      <p class="is-size-7 has-text-grey">文章回報</p>
+      <p class="is-size-7 has-text-grey">封鎖該作者</p>
+    <% elsif current_member %>
+      <p class="is-size-7 has-text-grey">文章回報</p>
+      <p class="is-size-7 has-text-grey">封鎖該作者</p>
+    <% else %>
+      <p class="is-size-7 has-text-grey">文章回報</p>
+    <% end %>
+    </div>
+  </div>
+  <div class="story-hr">  
+    <p class="is-size-6">作者</p>
+    <p class="is-size-3"><%= @story.member_name %></p>
+  </div>
+  <a class="button is-primary is-outlined is-fullwidth" style="height: 60px;">留個言吧</a>
+</div>
+<br />
+<br />
+
+<script>
+  $(document).ready(function(){
+    $('.fa-ellipsis-h').on('click', function(){
+      $('.story-action').slideToggle();
+    })
+  })
+</script>
