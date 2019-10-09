@@ -16,8 +16,6 @@
       <%= render 'shared/frontend/flash' if notice %>
       <%= yield %>
     </div>
-      <% if controller_name == 'stories' && action_name == 'show' %>
-        <%= render 'stories/more_stories' %>
-      <% end %>
+      <%= story_page_footer %>
   </body>
 </html>

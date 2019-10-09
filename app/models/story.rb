@@ -31,6 +31,14 @@ class Story < ApplicationRecord
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
   end
 
+  def member_name
+    member.try(:nickname) || member.email.split('@')[0]
+  end
+
+  def first_paragraph
+    content.split(/[\r\n]+/)[0]
+  end
+
   private
 
   def slug_candidate

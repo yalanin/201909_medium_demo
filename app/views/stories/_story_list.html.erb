@@ -1,7 +1,7 @@
 <% stories.each do |story| %>
   <div class='content'>
     <%= link_to story.title, story_path(story), class: 'title is-4' %>
-    <p class="is-size-5"><%= story.content.split(/[\r\n]+/)[0] %></p>
+    <p class="is-size-5"><%= story.first_paragraph %></p>
     <div class="button-left">
       <p>最後編輯時間：<%= time_ago_in_words(story.updated_at) %></p>
     </div>

@@ -80,14 +80,10 @@
     <% @stories.each do |story| %>
       <article class="media">     
         <div class="media-content">        
-          <h2 class="title is-4"><%= link_to story.title, story_page_path(story.member.email.split('@')[0], story), class: 'has-text-grey-dark' %></h2>
+          <h2 class="title is-4"><%= link_to story.title, story_page_path(story.member_name, story), class: 'has-text-grey-dark' %></h2>
           <p class="content"><%= truncate(story.content) %></p>
           <footer>
-            <% if story.member.nickname.nil? %>
-              <p><%= link_to story.member.email.split('@')[0], member_page_path(story.member.email.split('@')[0]), class: 'has-text-grey-dark' %></p>
-            <% else %>
-              <p><%= story.member.nickname %></p>
-            <% end %>
+            <p><%= link_to story.member_name, member_page_path(story.member_name), class: 'has-text-grey-dark' %></p>
             <p class="is-size-7"><%= story.created_at.strftime('%b %-d') %></p>
           </footer>      
         </div>
