@@ -1,0 +1,36 @@
+<br />
+<div class="story-container">
+  <div style="margin-bottom: 7rem;">
+    <h2 class="title is-2" style="display: inline-block;">
+      <%= current_member.member_name %>
+      <%= link_to '編輯檔案', edit_member_registration_path(current_member), class: "button is-outlined is-small", style: "margin-left: 1rem; vertical-align: middle;" %>
+    </h2>
+    <%= member_page_avatar(current_member) %>
+  </div>
+  <div class="is-clearfix"></div>
+  <%= link_to "檔案", member_page_path(current_member.member_name), class: 'tag is-medium is-white', style: 'text-decoration: none;' %>
+  <p class='tag is-medium is-white has-text-grey', style='text-decoration: none;'>拍手</p>
+  <hr class="dividing-line">
+
+  <h4 class="subtitle has-text-black">最新文章</h4>
+  <% @last_stories.each do |story| %>
+    <div style="width:100%; height:100%; border: 1px #BABABA solid; padding: 1.5rem 1.5rem; display: inline-block; margin-bottom: 2rem; border-radius: 1%;">
+      <figure class="has-text-left" style="display: inline-block; float:left">
+        <%= story_avatar(current_member) %>
+      </figure>
+      <p ><%= current_member.member_name %></p>
+      <p class="is-size-7 has-text-grey image-bottom"><%= story_date(story) %></p>
+      <figure class="has-text-centered image-bottom">
+        <img src="https://fakeimg.pl/710x200/">
+      </figure>
+      <h3 class="title is-3"><%= story.title %></h3>
+      <p class="image-bottom"><%= truncate(story.content) %></p>
+      <%= fa_icon "sign-language 2x", class: "has-text-grey-light" %>
+      <div class="button-right">
+        <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light" %>
+        <%= fa_icon "angle-down 2x", class: "has-text-grey-light" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

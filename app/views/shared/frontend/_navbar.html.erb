@@ -44,6 +44,7 @@
                   <%= link_to '新增文章', new_story_path, class: 'navbar-item' %>
                   <%= link_to '文章列表', stories_path, class: 'navbar-item' %>
                   <%= link_to '編輯個人資料', edit_member_registration_path, class: 'navbar-item' %>
+                  <%= link_to '個人檔案', member_page_path(current_member.member_name), class: 'navbar-item' %>
                   <%= link_to '刪除帳號', member_registration_path, method: :delete, class: 'navbar-item', data: { confirm: '確定刪除帳號？' } %>
                   <hr class="navbar-divider">
                   <%= link_to '登出', destroy_member_session_path, method: :delete, class: 'navbar-item', data: { confirm: '是否確定登出？' } %>

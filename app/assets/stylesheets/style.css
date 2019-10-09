@@ -35,6 +35,20 @@
   display:block; 
   margin:auto;
 }
+.member-page-round-image {
+  width:120px;
+  height:120px; 
+  border-radius:999em;
+  background-color:gray;
+  float:right;
+}
+.member-story-round-image {
+  width:40px;
+  height:40px; 
+  border-radius:50%;
+  background-color:gray;
+  margin-right: 0.3rem;
+}
 
 /* 文章表單 */
 .story-form {

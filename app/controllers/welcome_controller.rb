@@ -13,5 +13,6 @@ class WelcomeController < ApplicationController
   end
 
   def member
+    @last_stories = current_member.stories.is_published.order(created_at: :desc).limit(10)
   end
 end
