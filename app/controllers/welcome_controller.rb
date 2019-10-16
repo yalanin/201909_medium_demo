@@ -13,6 +13,12 @@ class WelcomeController < ApplicationController
   end
 
   def member
-    @last_stories = current_member.stories.is_published.order(created_at: :desc).limit(10)
+    @member = Member.find_by(nickname: params[:membername]) || Member.find_by("email LIKE?", "%#{params[:membername]}%")
+    @last_stories = @member.stories.is_published.order(created_at: :desc).limit(10)
+    @is_owner = if current_member == @member
+                  true
+                else
+                  false
+                end
   end
 end
