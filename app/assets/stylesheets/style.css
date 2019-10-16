@@ -205,3 +205,25 @@
 .image-bottom {
   margin-bottom:1rem;
 }
+
+/* 會員介紹頁面 */
+.intro-bottom {
+  margin-bottom: 7rem;
+}
+.intro-ele {
+  display: inline-block;
+}
+.member-action {
+  margin-left: 1rem !important; 
+  vertical-align: middle !important; 
+  border-radius:10% !important;
+}
+.story-box {
+  width:100%; 
+  height:100%; 
+  border: 1px #BABABA solid; 
+  padding: 1.5rem 1.5rem; 
+  display: inline-block; 
+  margin-bottom: 2rem; 
+  border-radius: 1%;
+}
