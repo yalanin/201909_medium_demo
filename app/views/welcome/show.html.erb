@@ -2,10 +2,17 @@
 <div class="story-container">
   <div class="story-content">
     <h2 class="title is-3"><%= @story.title %></h2>
-    <p class="is-size-6"><%= @story.member_name %><br /></p>
-    <p class="is-size-7 has-text-grey">
-      <%= story_date(@story) %>
-    </p>
+    <%= link_to member_page_path(@story.member_name) do %>
+      <figure class="has-text-left button-left intro-ele">
+        <%= story_avatar(@story.member) %>
+      </figure>
+    <% end %>
+    <%= link_to @story.member_name, member_page_path(@story.member_name), class: "is-size-6 has-text-grey" %>
+    <%= link_to story_page_path(@story.member_name, @story) do %>
+      <p class="is-size-7 has-text-grey">
+        <%= story_date(@story) %>
+      </p>
+    <% end %>
     <br />
     <p class="is-size-5"><%= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
   </div>
@@ -33,8 +40,13 @@
     </div>
   </div>
   <div class="story-hr">
-    <p class="is-size-6">作者</p>
-    <p class="is-size-3"><%= @story.member_name %></p>
+    <%= link_to member_page_path(@story.member_name) do %>
+      <figure class="has-text-left button-left intro-ele">
+        <%= story_avatar_big(@story.member) %>
+      </figure>
+    <% end %>
+    <p class="is-size-6">作者</p> 
+    <%= link_to @story.member_name, member_page_path(@story.member_name), class: "is-size-3 has-text-black" %>
   </div>
   <a class="button is-primary is-outlined is-fullwidth" style="height: 60px;">留個言吧</a>
 </div>

@@ -7,7 +7,6 @@
         <%= link_to '編輯檔案', edit_member_registration_path(current_member), class: "button is-outlined is-small member-action" %>
       <% else %>
         <p class="button is-outlined is-small is-primary member-action">追蹤</p>
-        <%= fa_icon "angle-down", class: "icon is-small" %>
       <% end %>
     </h2>
     <%= member_page_avatar(@member) %>

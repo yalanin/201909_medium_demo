@@ -49,6 +49,13 @@
   background-color:gray;
   margin-right: 0.3rem;
 }
+.member-story-round-image-big {
+  width:80px;
+  height:80px; 
+  border-radius:50%;
+  background-color:gray;
+  margin-right: 0.8rem;
+}
 
 /* 文章表單 */
 .story-form {
@@ -212,6 +219,7 @@
 }
 .intro-ele {
   display: inline-block;
+  margin-right: 0.3rem;
 }
 .member-action {
   margin-left: 1rem !important; 
