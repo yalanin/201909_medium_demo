@@ -1,0 +1,10 @@
+zh-TW:
+  activerecord:
+    attributes:
+      member:
+        current_password: 原始密碼
+        email: 電子信箱
+        intro: 自我介紹
+        nickname: 暱稱
+        password: 密碼
+        password_confirmation: 密碼確認
