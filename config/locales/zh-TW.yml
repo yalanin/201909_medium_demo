@@ -8,3 +8,5 @@ zh-TW:
         nickname: 暱稱
         password: 密碼
         password_confirmation: 密碼確認
+      story:
+        title: 標題
