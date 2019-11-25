@@ -1,6 +1,6 @@
-<% if story.errors.any? %>
+<% if flash[:error].present? %>
   <ul class="message-bar-alert-long">
-    <% story.errors.full_messages.each do |message| %>
+    <% flash[:error].each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>

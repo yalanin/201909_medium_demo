@@ -4,6 +4,10 @@ class StoriesController < ApplicationController
 
   def new
     @story = current_member.stories.new
+    if flash[:params].present?
+      @story.assign_attributes(flash[:params])
+      @story.valid?
+    end
   end
 
   def create
@@ -17,8 +21,10 @@ class StoriesController < ApplicationController
         redirect_to edit_story_path(@story), notice: '草稿已儲存'
       end
     else
-      @error_message = @story.errors.full_messages
-      render :new
+      flash[:error] = @story.errors.full_messages
+      flash[:params] = story_params.to_h
+      #render :new
+      redirect_to new_story_path
     end
   end
 
