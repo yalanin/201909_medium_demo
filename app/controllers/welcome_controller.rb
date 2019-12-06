@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-    @stories = Story.all.order(created_at: :desc).includes(:member)
+    #可以直接用 AASM 的狀態設定抓 scope
+    #ActiveStorage 要記得避免 SQL N+1
+    # @stories = Story.published.with_attached_cover.order(created_at: :desc).includes(:member)
+    @stories = Story.index_stories
   end
 
   def show

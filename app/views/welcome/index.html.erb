@@ -81,14 +81,17 @@
       <article class="media">     
         <div class="media-content">        
           <h2 class="title is-4"><%= link_to story.title, story_page_path(story.member_name, story), class: 'has-text-grey-dark' %></h2>
-          <p class="content"><%= truncate(story.content) %></p>
+          <p class="content has-text-justified"><%#= truncate(story.content) %>
+          <%= strip_tags(story.content).truncate(50) %></p>
           <footer>
             <p><%= link_to story.member_name, member_page_path(story.member_name), class: 'has-text-grey-dark' %></p>
             <p class="is-size-7"><%= story.created_at.strftime('%b %-d') %></p>
           </footer>      
         </div>
         <figure class="media-right">
-          <img src="https://fakeimg.pl/150x150/">
+          <% if story.cover.attached? %>
+            <%= image_tag story.cover.variant(resize: '150x150') %>
+          <% end %>
         </figure>
       </article>
     <% end %>

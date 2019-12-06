@@ -6,6 +6,8 @@ class Story < ApplicationRecord
   default_scope { where(deleted_at: nil) }
   scope :is_draft, -> { where(status: 'draft') }
   scope :is_published, -> { where(status: 'published') }
+  # 給 wellcome 首頁用
+  scope :index_stories, -> { published.with_attached_cover.order(created_at: :desc).includes(:member) }
 
   belongs_to :member
   has_one_attached :cover
