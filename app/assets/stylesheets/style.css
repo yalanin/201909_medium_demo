@@ -57,6 +57,11 @@
   margin-right: 0.8rem;
 }
 
+/* 文章圖 */
+.cover-image{
+  display:block;
+}
+
 /* 文章表單 */
 .story-form {
   width: 960px;

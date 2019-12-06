@@ -10,14 +10,23 @@
 
 <%= form_for(story) do |f| %>
   <div class="field">
+    <%= f.label :cover, '封面圖' %><br />
+    <%= image_tag story.cover.variant(resize: '960x320'), class: 'cover-image' if story.cover.attached? %>   
+    <%= f.file_field :cover %>
+  </div>
+
+  <div class="field">
     <%= f.label :title, '文章標題' %>
     <%= f.text_field :title, class: 'input' %>
   </div>
+
   <div class="field">
     <%= f.label :content, '文章內容' %>
     <%= f.text_area :content, rows: 10, class: 'textarea' %>
   </div>
+
   <br />
+
   <div class="field button-right">
     <% if story.may_unpublish? %>
       <%= f.submit '文章下架', name: 'unpublish', class: 'button is-warning' %>

@@ -8,6 +8,8 @@ class Story < ApplicationRecord
   scope :is_published, -> { where(status: 'published') }
 
   belongs_to :member
+  has_one_attached :cover
+  
   validates :title, presence: true
 
   aasm(column: 'status', no_direct_assignment: true) do
