@@ -13,8 +13,11 @@
         <%= story_date(@story) %>
       </p>
     <% end %>
-    <br />
-    <p class="is-size-5"><%= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
+    <%= image_tag @story.cover.variant(resize: '600x500'), style: "display:block; margin:auto; margin-bottom: 2rem; margin-top: 3rem;" if @story.cover.attached? %>
+    
+    <!-- you can also use simple_format -->
+    <p class="is-size-5"><%= simple_format(@story.content) %></p>
+    <p class="is-size-5"><%#= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
   </div>
   <%= fa_icon "sign-language 2x", class: "has-text-grey-light" %>
   <div class="button-right">
