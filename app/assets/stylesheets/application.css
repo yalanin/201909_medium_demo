@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ * 移動 CSS 至 webpacker，把 bulma 拿掉
  *= require bulma/bulma.css
  *= require font-awesome
  */

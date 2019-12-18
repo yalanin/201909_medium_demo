@@ -1,0 +1,2 @@
+/*把原本的 css 搬進 webpacker 之後 import*/
+@import 'style.css';

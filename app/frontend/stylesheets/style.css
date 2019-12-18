@@ -1,0 +1,242 @@
+.boby-contain{
+  width:70% !important;
+  margin: 0 auto;
+}
+
+/* 頁首抬頭 */
+.member-title {
+  text-align: center;
+}
+
+/*navbar圖示*/
+.nav-round-image {
+  width:28px;
+  height:28px; 
+  border-radius:50%;
+  background-color:gray;
+  margin-right: 0.3rem;
+}
+
+/*會員表單填寫設定*/
+.form-center {
+  width: 40%;
+  margin: 0 auto;
+}
+.form-center-edit {
+  width: 60%;
+  margin: 0 auto;
+}
+/*圓形圖像*/
+.round-image {
+  width:180px;
+  height:180px; 
+  border-radius:999em;
+  background-color:gray;
+  display:block; 
+  margin:auto;
+}
+.member-page-round-image {
+  width:120px;
+  height:120px; 
+  border-radius:999em;
+  background-color:gray;
+  float:right;
+}
+.member-story-round-image {
+  width:40px;
+  height:40px; 
+  border-radius:50%;
+  background-color:gray;
+  margin-right: 0.3rem;
+}
+.member-story-round-image-big {
+  width:80px;
+  height:80px; 
+  border-radius:50%;
+  background-color:gray;
+  margin-right: 0.8rem;
+}
+
+/* 文章圖 */
+.cover-image{
+  display:block;
+}
+
+/* 文章表單 */
+.story-form {
+  width: 960px;
+  margin: 0 auto;
+}
+.story-list-title {
+  display:flex;
+  justify-content: space-between; 
+  padding-bottom: 1rem;
+  padding-right: 5rem;
+}
+.story-action-botton{
+  width:70px !important;
+  margin-left: 0.5rem;
+  text-align: center;
+}
+
+/* 文章 show 頁面 */
+.story-container {
+  width: 75%; 
+  margin: 0 auto;
+}
+.story-content {
+  margin-bottom: 70px;
+}
+.story-hr {
+  border-top:0.3px #D4D4D4 solid; 
+  border-bottom:0.3px #D4D4D4 solid; 
+  margin: 2rem 0; 
+  padding: 2rem 0;
+}
+.more-story-hr { 
+  border-bottom:0.3px #D4D4D4 solid; 
+  padding: 1rem 0;
+}
+.dividing-line {
+  border: 0; 
+  height: 1px; 
+  background: #BABABA;
+}
+.more-story-back {
+  background-color:#F5F5F5;
+}
+.more-story-head {
+  width: 980px; 
+  margin: 0 auto; 
+  padding-top: 1.5rem;
+}
+.more-story-footer{
+  background-color:#212121;
+}
+.more-story-box{
+  width: 320px; 
+  padding-top: 1.5rem; 
+  margin-right:10px;
+  margin-top: 1.5rem; 
+  background-color:blue; 
+  float:left;
+}
+.more-story-box1{
+  width: 320px; 
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  background-color:blue; 
+  float:left;
+}
+.more-story-box2{
+  width: 700px; 
+  margin: 0 auto; 
+  float: left;
+}
+.more-story-box3{
+  width:160px; 
+  margin: 0 auto; 
+  float:right;
+}
+
+/* 按鈕 */
+.button-center {
+  width: 40%; 
+  margin: 0 auto;
+}
+.button-right {
+  float: right;
+}
+.button-left {
+  float:left;
+}
+.button-left1 {
+  float:left; 
+  padding-right: 1rem;
+}
+/* 給字少的按鈕用 */
+.less-button-center {
+  width: 130px; 
+  margin: 0 auto;
+}
+.one-button-center {
+  width: 50px; 
+  margin: 0 auto;
+}
+.button-right-space {
+  margin-right: 10px;
+}
+
+/* 錯誤訊息 */
+.error-message {
+  width: 40%;
+  margin: 0 auto;
+  text-align: left;
+}
+.error-message-edit {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+.field_with_errors{
+  color: red;
+}
+.field_with_errors .input{
+  border: 1px red solid;
+}
+.message-bar {
+  background-color: #D4FFD4;
+  border-radius: 4px;
+  padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  position: relative;
+}
+.message-bar-alert-long {
+  background-color: #FFBFBF;
+  border-radius: 4px;
+  padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+.message-bar-alert {
+  background-color: #FFBFBF;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+
+/* 手機選單顯示 */
+.mobile-show {
+  background-color: white;
+  float: right !important;
+  position: absolute !important;
+  right: 0;
+}
+
+/* 首頁圖片與標題的空隙 */
+.image-bottom {
+  margin-bottom:1rem;
+}
+
+/* 會員介紹頁面 */
+.intro-bottom {
+  margin-bottom: 7rem;
+}
+.intro-ele {
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+.member-action {
+  margin-left: 1rem !important; 
+  vertical-align: middle !important; 
+  border-radius:10% !important;
+}
+.story-box {
+  width:100%; 
+  height:100%; 
+  border: 1px #BABABA solid; 
+  padding: 1.5rem 1.5rem; 
+  display: inline-block; 
+  margin-bottom: 2rem; 
+  border-radius: 1%;
+}
