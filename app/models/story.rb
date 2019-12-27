@@ -1,9 +1,11 @@
 class Story < ApplicationRecord  
+  acts_as_paranoid
   include AASM
   extend FriendlyId
   friendly_id :slug_candidate, use: :slugged
-
-  default_scope { where(deleted_at: nil) }
+  
+  # 改用 paranoia gem，所以可以不用
+  # default_scope { where(deleted_at: nil) }
   scope :is_draft, -> { where(status: 'draft') }
   scope :is_published, -> { where(status: 'published') }
   # 給 wellcome 首頁用
@@ -27,9 +29,10 @@ class Story < ApplicationRecord
     end
   end
 
-  def destroy
-    update(deleted_at: Time.now)
-  end
+  # 改用 paranoia gem，所以可以不用
+  # def destroy
+  #   update(deleted_at: Time.now)
+  # end
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
