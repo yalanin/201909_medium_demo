@@ -1,0 +1,9 @@
+<article class="comment story-box" style="margin-bottom: 1rem">
+  <span class="profile">
+    <figure class="has-text-left button-left intro-ele">
+      <%= image_tag comment.member.avatar.variant(resize: '50x50'), class: 'member-story-round-image' if comment.member.avatar.attached? %>
+    </figure>
+    <span class="username"><%= comment.member.nickname %></span>
+  </span>
+  <p><%= simple_format(comment.content) %></p>
+</article>

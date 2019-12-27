@@ -8,6 +8,8 @@ class WelcomeController < ApplicationController
 
   def show
     @story = Story.friendly.find(params[:story_id])
+    @comment = @story.comments.new
+    @comments = @story.comments.order(id: :desc)
     @is_author = if current_member == @story.member
                   true
                 else

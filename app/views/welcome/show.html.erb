@@ -51,7 +51,12 @@
     <p class="is-size-6">作者</p> 
     <%= link_to @story.member_name, member_page_path(@story.member_name), class: "is-size-3 has-text-black" %>
   </div>
-  <a class="button is-primary is-outlined is-fullwidth" style="height: 60px;">留個言吧</a>
+  <%# <a class="button is-primary is-outlined is-fullwidth" style="height: 60px;">留個言吧</a> %>
+  <%= render 'comment', story: @story, comment: @comment %>
+  <section class="comment-list" style="margin-top: 1.5rem;">
+    <!-- use collection method -->
+    <%= render partial: 'comment_body', collection: @comments, as: :comment %>
+  </section>
 </div>
 <br />
 <br />

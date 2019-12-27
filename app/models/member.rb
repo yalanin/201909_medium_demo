@@ -7,6 +7,7 @@ class Member < ApplicationRecord
 
   has_many :stories
   has_one_attached :avatar
+  has_many :comments, dependent: :destroy
 
   def member_name
     nickname || email.split('@')[0]

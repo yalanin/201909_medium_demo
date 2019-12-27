@@ -13,6 +13,7 @@ class Story < ApplicationRecord
 
   belongs_to :member
   has_one_attached :cover
+  has_many :comments, dependent: :destroy
   
   validates :title, presence: true
 
