@@ -1,9 +1,10 @@
 <article class="comment story-box" style="margin-bottom: 1rem">
-  <span class="profile">
-    <figure class="has-text-left button-left intro-ele">
-      <%= image_tag comment.member.avatar.variant(resize: '50x50'), class: 'member-story-round-image' if comment.member.avatar.attached? %>
-    </figure>
-    <span class="username"><%= comment.member.nickname %></span>
-  </span>
-  <p><%= simple_format(comment.content) %></p>
+  <figure class="has-text-left button-left intro-ele">
+    <%= image_tag comment.member.avatar.variant(resize: '50x50'), class: 'member-story-round-image' if comment.member.avatar.attached? %>
+  </figure>
+  <p class="username is-size-6 has-text-grey"><%= comment.member.nickname %></p>
+  <p class="is-size-7 has-text-grey"><%= comment.created_at.strftime('%b %d, %Y') %></p>
+  <div style="margin-top: 1rem;">
+    <p class="is-size-6"><%= comment.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
+  </div>
 </article>
