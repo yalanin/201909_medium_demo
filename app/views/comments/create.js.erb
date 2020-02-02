@@ -1,6 +1,6 @@
 var list = document.querySelector('section.comment-list');
-var renderComtent = "<%= j(render 'welcome/comment_body', comment: @comment) %>"
-var contentBox = document.getElementById('comment_content')
+var renderComtent = "<%= j(render 'welcome/comment_body', comment: @comment) %>";
+var contentBox = document.getElementById('comment_content');
 
-list.innerHTML = renderComtent + list.innerHTML
-contentBox.value = ''
+list.innerHTML = renderComtent + list.innerHTML;
+contentBox.value = '';

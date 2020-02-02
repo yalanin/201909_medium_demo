@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'credit_cards/open'
+  get 'credit_cards/debit'
+  get 'credit_cards/credit'
+  get 'credit_cards/close'
   devise_for :members
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'
