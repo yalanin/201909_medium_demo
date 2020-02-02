@@ -1,2 +1,2 @@
 import 'bulma'
-import './application.scss'
+// import './application.scss'

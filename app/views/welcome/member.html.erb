@@ -2,7 +2,7 @@
 <div class="story-container">
   <div class="intro-bottom">
     <h2 class="title is-2 intro-ele">
-      <%= @member.member_name %>      
+      <%= @member.member_name %>
       <% if @is_owner %>
         <%= link_to '編輯檔案', edit_member_registration_path(current_member), class: "button is-outlined is-small member-action" %>
       <% else %>
@@ -18,7 +18,7 @@
 
   <h4 class="subtitle has-text-black">最新文章</h4>
   <% @last_stories.each do |story| %>
-    <div class="story-box">
+    <div class="story-box" data-controller="story">
       <%= link_to member_page_path(@member.member_name) do %>
         <figure class="has-text-left button-left intro-ele">
           <%= story_avatar(@member) %>
@@ -35,7 +35,10 @@
       <% end %>
       <h3><%= link_to story.title, story_page_path(story.member_name, story), class: "title is-3 image-bottom intro-ele" %></h3>
       <p class="image-bottom"><%= truncate(story.content, length: 100) %></p>
-      <%= fa_icon "sign-language 2x", class: "has-text-grey-light" %>
+      <%= link_to '#', data:{ action: 'story#addClap', slug: story.slug } do %>
+        <%= fa_icon "sign-language 2x", class: "has-text-grey-light" %>
+        <span class="has-text-grey" data-target="story.clapCount"><%= story.clap_counter %></span>
+      <% end %>
       <% if @is_owner %>
         <div class="button-right">
           <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light" %>

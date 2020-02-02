@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_member!, except: :show
+  before_action :authenticate_member!, except: :clap
   before_action :find_story, only: [:edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: :clap
 
   def new
     @story = current_member.stories.new
@@ -37,7 +38,7 @@ class StoriesController < ApplicationController
       @stories = @stories.is_draft if params[:status] == 'draft'
     else
       @stories = @stories.is_draft
-    end    
+    end
   end
 
   def show
@@ -50,7 +51,7 @@ class StoriesController < ApplicationController
     if @story.update(story_params)
       case
       when params[:publish] && @story.draft?
-        @story.publish! 
+        @story.publish!
       when params[:unpublish] && @story.published?
         @story.unpublish!
       end
@@ -63,6 +64,16 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     redirect_to stories_path, notice: '文章已刪除'
+  end
+
+  def clap
+    if member_signed_in?
+      story = Story.friendly.find(params[:id])
+      story.increment!(:clap_counter) if story
+      render json: {status: story.clap_counter}
+    else
+      render json: {status: 'sign in first'}
+    end
   end
 
   private

@@ -14,18 +14,23 @@
       </p>
     <% end %>
     <%= image_tag @story.cover.variant(resize: '600x500'), style: "display:block; margin:auto; margin-bottom: 2rem; margin-top: 3rem;" if @story.cover.attached? %>
-    
+
     <!-- you can also use simple_format -->
     <p class="is-size-5"><%#= simple_format(@story.content) %></p>
     <p class="is-size-5"><%= @story.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></p>
   </div>
-  <%= fa_icon "sign-language 2x", class: "has-text-grey-light" %>
-  <span class="clapCount is-size-5" style="margin-left: 0.2rem">0</span>
-  <div class="button-right">
-    <%= fa_icon "twitter 2x", class: "button-right-space has-text-grey-light" %>
-    <%= fa_icon "facebook-square 2x", class: "button-right-space has-text-grey-light" %>
-    <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light" %>
-    <%= fa_icon "ellipsis-h 2x", class: "has-text-grey-light" %>  
+  <div data-controller="story">
+    <%#= link_to 'test', story_path(@story.member_name) %>
+    <%= link_to '#', data:{ action: 'story#addClap', slug: @story.slug } do %>
+      <%= fa_icon "sign-language 2x", class: "has-text-grey-light" %>
+      <span class="clapCount is-size-5 has-text-grey" style="margin-left: 0.2rem" data-target="story.clapCount"><%= @story.clap_counter %></span>
+    <% end %>
+    <div class="button-right">
+      <%= fa_icon "twitter 2x", class: "button-right-space has-text-grey-light" %>
+      <%= fa_icon "facebook-square 2x", class: "button-right-space has-text-grey-light" %>
+      <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light" %>
+      <%= fa_icon "ellipsis-h 2x", class: "has-text-grey-light" %>
+    </div>
   </div>
   <div class="is-clearfix"></div>
   <br />
@@ -49,7 +54,7 @@
         <%= story_avatar_big(@story.member) %>
       </figure>
     <% end %>
-    <p class="is-size-6">作者</p> 
+    <p class="is-size-6">作者</p>
     <%= link_to @story.member_name, member_page_path(@story.member_name), class: "is-size-3 has-text-black" %>
   </div>
   <%# <a class="button is-primary is-outlined is-fullwidth" style="height: 60px;">留個言吧</a> %>
