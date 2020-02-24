@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   # 作者介紹頁面路徑
   get '@:membername', to: 'welcome#member', as: 'member_page'
 
+  resources :members, only: [] do
+    # 跟隨作者
+    post :follow, on: :member
+  end
+
   resources :stories do
     resources :comments, only: [:create]
     post :clap, on: :member

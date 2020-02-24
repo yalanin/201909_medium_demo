@@ -1,12 +1,14 @@
 <br />
 <div class="story-container">
-  <div class="intro-bottom">
+  <div class="intro-bottom" data-controller="user">
     <h2 class="title is-2 intro-ele">
       <%= @member.member_name %>
       <% if @is_owner %>
         <%= link_to '編輯檔案', edit_member_registration_path(current_member), class: "button is-outlined is-small member-action" %>
       <% else %>
-        <p class="button is-outlined is-small is-primary member-action">追蹤</p>
+        <%= link_to '#', class: "button is-outlined is-small is-primary member-action", data: { action: 'user#follow', user: @member.id, target: 'user.followButton'} do %>
+          <%= (member_signed_in? && current_member.follow?(@member))? '已追蹤' : '追蹤' %>
+        <% end %>
       <% end %>
     </h2>
     <%= member_page_avatar(@member) %>
