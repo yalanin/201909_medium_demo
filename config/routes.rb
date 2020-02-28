@@ -15,14 +15,22 @@ Rails.application.routes.draw do
   # 作者介紹頁面路徑
   get '@:membername', to: 'welcome#member', as: 'member_page'
 
-  resources :members, only: [] do
-    # 跟隨作者
-    post :follow, on: :member
+  namespace :api do
+    # api 可以加版本
+    # namespace :v1 do
+      resources :members, only: [] do
+        # 跟隨作者
+        post :follow, on: :member
+      end
+
+      resources :stories, only: [] do
+        post :clap, on: :member
+      end
+    # end
   end
 
   resources :stories do
     resources :comments, only: [:create]
-    post :clap, on: :member
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

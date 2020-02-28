@@ -1,7 +1,6 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_member!, except: :clap
+  before_action :authenticate_member!
   before_action :find_story, only: [:edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token, only: :clap
 
   def new
     @story = current_member.stories.new
@@ -64,16 +63,6 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     redirect_to stories_path, notice: '文章已刪除'
-  end
-
-  def clap
-    if member_signed_in?
-      story = Story.friendly.find(params[:id])
-      story.increment!(:clap_counter) if story
-      render json: {status: story.clap_counter}
-    else
-      render json: {status: 'sign in first'}
-    end
   end
 
   private
