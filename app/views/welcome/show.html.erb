@@ -28,7 +28,9 @@
     <div class="button-right">
       <%= fa_icon "twitter 2x", class: "button-right-space has-text-grey-light" %>
       <%= fa_icon "facebook-square 2x", class: "button-right-space has-text-grey-light" %>
-      <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light" %>
+    <%= link_to '#', data:{ action: 'user#bookmark', slug: @story.slug } do %>
+      <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light", data: { target: 'user.bookmark' } %>
+    <% end %>
       <%= fa_icon "ellipsis-h 2x", class: "has-text-grey-light" %>
     </div>
   </div>

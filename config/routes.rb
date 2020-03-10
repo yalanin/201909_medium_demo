@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
       resources :stories, only: [] do
         post :clap, on: :member
+        post :bookmark, on: :member
       end
     # end
   end
