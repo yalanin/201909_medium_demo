@@ -1,9 +1,9 @@
-class Story < ApplicationRecord  
+class Story < ApplicationRecord
   acts_as_paranoid
   include AASM
   extend FriendlyId
   friendly_id :slug_candidate, use: :slugged
-  
+
   # 改用 paranoia gem，所以可以不用
   # default_scope { where(deleted_at: nil) }
   scope :is_draft, -> { where(status: 'draft') }
@@ -14,7 +14,8 @@ class Story < ApplicationRecord
   belongs_to :member
   has_one_attached :cover
   has_many :comments, dependent: :destroy
-  
+  has_many :bookmarks, dependent: :destroy
+
   validates :title, presence: true
 
   aasm(column: 'status', no_direct_assignment: true) do

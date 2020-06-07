@@ -6,12 +6,27 @@ class Member < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
 
   has_one_attached :avatar
-  has_many :stories
+  has_many :stories, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :follows
+  has_many :follows, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   def member_name
     nickname || email.split('@')[0]
+  end
+
+  def bookmark?(story)
+    bookmarks.exists?(story: story)
+  end
+
+  def bookmark!(story)
+    if bookmark?(story)
+      bookmarks.find_by(story: story).destroy
+      return '書籤已刪除'
+    else
+      bookmarks.create(story: story)
+      return '書籤已建立'
+    end
   end
 
   def follow?(member)

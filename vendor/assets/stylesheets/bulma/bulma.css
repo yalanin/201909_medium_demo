@@ -1065,6 +1065,10 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   color: #b5b5b5 !important;
 }
 
+.has-text-grey-click {
+  color: #02C874 !important;
+}
+
 .has-background-grey-light {
   background-color: #b5b5b5 !important;
 }

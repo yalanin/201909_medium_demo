@@ -28,8 +28,12 @@
     <div class="button-right">
       <%= fa_icon "twitter 2x", class: "button-right-space has-text-grey-light" %>
       <%= fa_icon "facebook-square 2x", class: "button-right-space has-text-grey-light" %>
-    <%= link_to '#', data:{ action: 'user#bookmark', slug: @story.slug } do %>
-      <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light", data: { target: 'user.bookmark' } %>
+    <%= link_to '#', data:{ action: 'story#bookmark', slug: @story.slug } do %>
+      <% if member_signed_in? && current_member.bookmark?(@story) %>
+        <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-click", data: { target: 'story.bookmark' }, style: 'color: red' %>
+      <% else %>
+        <%= fa_icon "bookmark 2x", class: "button-right-space has-text-grey-light", data: { target: 'story.bookmark' } %>
+      <% end %>
     <% end %>
       <%= fa_icon "ellipsis-h 2x", class: "has-text-grey-light" %>
     </div>
