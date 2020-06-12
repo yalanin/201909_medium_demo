@@ -16,6 +16,7 @@ zh-TW:
       x_minutes: "%{count} 分鐘前"
       x_hours: "%{count} 小時前"
       x_days: "%{count} 天前"
+      x_months: "%{count} 個月前"
       about_x_hours: "%{count} 小時前"
       about_x_days: "%{count} 天前"
       about_x_months: "%{count} 個月前"

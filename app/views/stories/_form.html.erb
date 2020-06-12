@@ -11,7 +11,7 @@
 <%= form_for(story) do |f| %>
   <div class="field">
     <%= f.label :cover, '封面圖' %><br />
-    <%= image_tag story.cover.variant(resize: '960x320'), class: 'cover-image' if story.cover.attached? %>   
+    <%= image_tag story.cover.variant(resize: '960x320'), class: 'cover-image' if story.cover.attached? %>
     <%= f.file_field :cover %>
   </div>
 
@@ -34,6 +34,8 @@
     <% else %>
       <%= f.submit '儲存草稿', name: 'save_as_draft', class: 'button is-light' %>
       <%= f.submit '發布文章', name: 'publish', class: 'button is-primary' %>
-    <% end %>   
+    <% end %>
   </div>
 <% end %>
+
+<%= javascript_pack_tag 'editor' %>
