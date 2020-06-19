@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '@:membername', to: 'welcome#member', as: 'member_page'
 
   namespace :api do
+    post :upload_image, to: 'utils#upload_image'
     # api 可以加版本
     # namespace :v1 do
       resources :members, only: [] do

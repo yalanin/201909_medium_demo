@@ -1,7 +1,7 @@
 <% stories.each do |story| %>
   <div class='content'>
     <%= link_to story.title, story_page_path(story.member_name, story), class: 'title is-4' %>
-    <p class="is-size-5"><%= story.first_paragraph %></p>
+    <p class="is-size-5"><%= strip_tags(story.first_paragraph) %></p>
     <div class="button-left">
       <p>最後編輯時間：<%= time_ago_in_words(story.updated_at) %></p>
     </div>
@@ -11,7 +11,7 @@
     <div class="story-action-<%= "#{story.id}" %> story-action-botton box button-left" style="display: none;">
       <%= link_to '編輯', edit_story_path(story), class: 'is-size-7 has-text-grey' %>
       <%= link_to '刪除', story_path(story), method: :delete, class: 'is-size-7 has-text-grey', data: { confirm: '確定刪除？' } %>
-    </div>   
+    </div>
   </div>
   <div class="is-clearfix"></div>
   <hr>
