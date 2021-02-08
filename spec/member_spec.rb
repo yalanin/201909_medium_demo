@@ -1,8 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Member do
+  # before do
+  #   @member = Member.create(nickname: 'RSpec 測試', intro: '這是 RSpec 測試創造的 member')
+  # end
+
+  def member
+    Member.create(nickname: 'RSpec 測試', intro: '這是 RSpec 測試創造的 member')
+  end
+
   it 'should create a new member' do
-    member = Member.create(nickname: 'RSpec 測試')
     expect(member.nickname).to eq('RSpec 測試')
+  end
+
+  it 'should has intro' do
+    expect(member.intro).to eq('這是 RSpec 測試創造的 member')
   end
 end
