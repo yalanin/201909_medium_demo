@@ -23,4 +23,9 @@ RSpec.describe Member do
   it 'should has intro' do
     expect(member.intro).to eq('這是 RSpec 測試創造的 member')
   end
+
+  it 'has custom error message' do
+    comparison = '我希望變成這樣'
+    expect(member.intro).to eq(comparison), "我希望結果是 #{comparison}，可是出現的是 #{member.intro}"
+  end
 end
