@@ -14,16 +14,22 @@ RSpec.describe Comment do
     # end
   # end
 
-  context 'descirbed class method' do
-    subject { described_class.new(content: '主題文字1') }
-    let(:comment) { described_class.new(content: '主題文字2') }
+  # context 'descirbed class method' do
+  #   subject { described_class.new(content: '主題文字1') }
+  #   let(:comment) { described_class.new(content: '主題文字2') }
 
-    it 'should have new subject comment' do
-      expect(subject.content).to eq('主題文字1')
-    end
+  #   it 'should have new subject comment' do
+  #     expect(subject.content).to eq('主題文字1')
+  #   end
 
-    it 'should have new let comment' do
-      expect(comment.content).to eq('主題文字2')
-    end
+  #   it 'should have new let comment' do
+  #     expect(comment.content).to eq('主題文字2')
+  #   end
+  # end
+
+  context 'one line syntax' do
+    let(:comment) { described_class.new(content: '一行式語法測試') }
+    subject { comment.content }
+    it { is_expected.to eq('一行式語法測試') }
   end
 end
