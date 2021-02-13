@@ -1,22 +1,6 @@
 require 'rails_helper'
-
-RSpec.shared_examples 'Active Record result is 2' do
-  it 'should have 2 subjects' do
-    expect(subject.length).to eq(2)
-  end
-end
-
-RSpec.shared_context 'Share Context' do
-  before do
-    @comment = Comment.create(params)
-  end
-
-  def params
-    { member_id: member.id, content: 'RSpec 共享測試' }
-  end
-
-  let(:member) { Member.create(nickname: 'RSpec 測試') }
-end
+require 'shared/share_context.rb'
+require 'shared/share_examples.rb'
 
 RSpec.describe WelcomeController, type: :controller do
   describe 'with welcome show page' do
