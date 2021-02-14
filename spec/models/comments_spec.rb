@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe Comment do
 # RSpec.describe Story do
   # context 'subject method' do
-    # let(:comment) { Comment.create(content: 'RSpec 測試留言') }
-    # it 'should run with subject method but fail' do
-    #   expect(subject).to eq(Comment.new)
-    # end
+    let(:comment) { Comment.create(content: 'RSpec 測試留言') }
+    it 'should run with subject method but fail' do
+      expect(subject).eql?(Comment.new)
+      expect(subject).to be_a_new(Comment)
+    end
 
     # it 'should run with subject method' do
     #   subject.content = 'RSpec 測試留言'
@@ -27,9 +28,9 @@ RSpec.describe Comment do
   #   end
   # end
 
-  context 'one line syntax' do
-    let(:comment) { described_class.new(content: '一行式語法測試') }
-    subject { comment.content }
-    it { is_expected.to eq('一行式語法測試') }
-  end
+  # context 'one line syntax' do
+  #   let(:comment) { described_class.new(content: '一行式語法測試') }
+  #   subject { comment.content }
+  #   it { is_expected.to eq('一行式語法測試') }
+  # end
 end
