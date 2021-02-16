@@ -25,7 +25,7 @@ RSpec.describe StoriesController, type: :controller do
   #   expect(new_story.title).to eq('RSpec 相同變數測試 level 1')
   # end
 
-  describe 'with story index page' do
+  # describe 'with story index page' do
     # it 'should show all stories of member' do
     #   puts 'in the index test'
     #   Story.create(member_id: member.id, title: 'RSpec 測試')
@@ -38,17 +38,17 @@ RSpec.describe StoriesController, type: :controller do
     #   expect(member.nickname).to eq ('RSpec 測試')
     # end
 
-    describe 'task with all matcher' do
-      let(:member) { Member.create(nickname: 'test') }
-      let(:story1) { Story.create(member_id: member.id, title: 'all matcher test') }
-      let(:story2) { Story.create(member_id: member.id, title: 'all matcher test') }
-      let(:story3) { Story.create(member_id: member.id, title: 'all matcher test') }
+  #   describe 'task with all matcher' do
+  #     let(:member) { Member.create(nickname: 'test') }
+  #     let(:story1) { Story.create(member_id: member.id, title: 'all matcher test') }
+  #     let(:story2) { Story.create(member_id: member.id, title: 'all matcher test') }
+  #     let(:story3) { Story.create(member_id: member.id, title: 'all matcher test') }
 
-      it 'test with all matcher' do
-        expect([story1.title, story2.title, story3.title]).to all( eq('all matcher test') )
-      end
-    end
-  end
+  #     it 'test with all matcher' do
+  #       expect([story1.title, story2.title, story3.title]).to all( eq('all matcher test') )
+  #     end
+  #   end
+  # end
 
   # describe 'with story new page' do
     # before(:context) do
@@ -79,4 +79,15 @@ RSpec.describe StoriesController, type: :controller do
   #     expect(new_story.title).to eq('RSpec 相同變數測試第二層')
   #   end
   # end
+
+  describe 'with update page' do
+    let(:story) { Story.create(title: 'change matcher', clap_counter: 100) }
+    it 'should pass with change matcher' do
+      expect { story.update(title: 'change matcher 測試') }.to change { story.title }.from('change matcher').to('change matcher 測試')
+    end
+
+    it 'should pass with by method if data is integer' do
+      expect { story.update(clap_counter: 101) }.to change { story.clap_counter }.by(1)
+    end
+  end
 end
