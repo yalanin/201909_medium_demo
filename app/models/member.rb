@@ -3,6 +3,9 @@ class Member < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  enum role: { member: 0, vip: 1, platinum: 2, admin: 3 }
+
   validates :nickname, presence: true, uniqueness: true
 
   has_one_attached :avatar
@@ -10,6 +13,10 @@ class Member < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :follows, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+
+  def paid?
+    vip? || platinum?
+  end
 
   def member_name
     nickname || email.split('@')[0]

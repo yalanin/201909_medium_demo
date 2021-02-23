@@ -31,6 +31,11 @@ Rails.application.routes.draw do
     # end
   end
 
+  resources :members, only: [] do
+    get :pricing, on: :collection
+    get :payment, on: :collection
+  end
+
   resources :stories do
     resources :comments, only: [:create]
   end

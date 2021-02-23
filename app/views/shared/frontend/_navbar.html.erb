@@ -12,12 +12,12 @@
     <div id='mobile-show-box' class="navbar-item navbar-dropdown mobile-show" style=" display: none;">
       <a class="is-link"></a>
       <div class="navbar-dropdown">
-      <% if member_signed_in? %>        
+      <% if member_signed_in? %>
         <%= link_to '新增文章', new_story_path, class: 'navbar-item' %>
         <%= link_to '文章列表', stories_path, class: 'navbar-item' %>
         <%= link_to '編輯個人資料', edit_member_registration_path, class:   'navbar-item' %>
         <%= link_to '刪除帳號', member_registration_path, method: :delete, class: 'navbar-item', data: { confirm: '確定刪除帳號？' } %>
-        <%= link_to '登出', destroy_member_session_path, method: :delete, class: 'navbar-item', data: { confirm: '是否確定登出？' } %>       
+        <%= link_to '登出', destroy_member_session_path, method: :delete, class: 'navbar-item', data: { confirm: '是否確定登出？' } %>
       <% else %>
         <%= link_to '註冊', new_member_registration_path, class: 'navbar-item' %>
         <%= link_to '登入', new_member_session_path, class: 'navbar-item' %>
@@ -28,22 +28,23 @@
     <div class="clearfix"></div>
   </div>
 
-  
+
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-            <% if member_signed_in? %>             
-              <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 30px">               
+            <% if member_signed_in? %>
+              <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 30px">
                 <a class="navbar-link">
                   <%= nav_avatar(current_member) %>
                   <strong><%= current_member.try(:nickname) || current_member.email %></strong>
                 </a>
-                <div class="navbar-dropdown">                 
+                <div class="navbar-dropdown">
                   <%= link_to '新增文章', new_story_path, class: 'navbar-item' %>
                   <%= link_to '文章列表', stories_path, class: 'navbar-item' %>
                   <%= link_to '編輯個人資料', edit_member_registration_path, class: 'navbar-item' %>
+                  <%= link_to '會員升級', pricing_members_path, class: 'navbar-item' unless current_member.paid? %>
                   <%= link_to '個人檔案', member_page_path(current_member.member_name), class: 'navbar-item' %>
                   <%= link_to '刪除帳號', member_registration_path, method: :delete, class: 'navbar-item', data: { confirm: '確定刪除帳號？' } %>
                   <hr class="navbar-divider">
