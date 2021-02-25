@@ -3,5 +3,7 @@ class MembersController < ApplicationController
   end
 
   def payment
+    @fee = ENV["price_#{params[:type]}"]
+    @payment_type = I18n.t("price_#{params[:type]}")
   end
 end

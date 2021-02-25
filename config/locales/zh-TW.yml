@@ -21,4 +21,6 @@ zh-TW:
       about_x_days: "%{count} 天前"
       about_x_months: "%{count} 個月前"
       about_x_years: "%{count} 年前"
+  price_vip: 'VIP會員'
+  price_platinum: '白金會員'
 
